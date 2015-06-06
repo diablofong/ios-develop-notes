@@ -17,4 +17,37 @@ APNS 全名為 Apple Push Notification Service，也就是大家常說的 Push N
 
 ##SSL Push Certificate申請教學
 
-1. 首先進入到ios developer center,
+1. 首先進入到ios developer center,點選Certificates, Identifiers & Profiles => Identifiers
+</br></br>
+![Alt text](image/step1.png)
+
+2. 選擇App IDs,並點選![Alt text](image/add.png)建立新的App
+</br></br>
+![Alt text](image/step2.png)
+
+3. 輸入App名稱,並在Explicit App ID輸入Bundle ID,最後在App Services要記得勾選Push Notifications
+</br></br>
+![Alt text](image/step3.png)
+![Alt text](image/step3-1.png)
+
+4. 新增完系統會出現確認畫面,可以看到Push Notifications的狀態為Configurable,這時候直接按下submit按鈕送出後,App就會新增完畢
+</br></br>
+![Alt text](image/step4.png)
+
+5. 接下來要進行Push Notifications的設定,並建立service所需要的SSL憑證,先回到App IDs頁面並點選剛剛新增的App,並點選![Alt text](image/edit.png)按鈕,將畫面拉到Push Notifications的畫面
+</br></br>
+![Alt text](image/step5.png)
+![Alt text](image/step5-1.png)
+
+6. 建立開發用的SSL憑證,在Development SSL Certificate項目中點選![Alt text](image/ssl.png)按鈕
+</br></br>
+![Alt text](image/step6.png)
+
+7. 系統會提示需要建立CSR file,直接點選![Alt text](image/continue.png)按鈕,系統會需要上傳certSigningRequest file,至於該檔案怎麼製作請自行google,點選![Alt text](image/choose.png)按鈕上傳檔案,在按下![Alt text](image/generate.png)按鈕後,憑證即可製作完畢
+</br></br>
+![Alt text](image/step7.png)
+
+8. 系統產生憑證後,點選![Alt text](image/download.png)按鈕下載到電腦後,,直接點選兩下則會將憑證匯入到『鑰匙圈存取』,可以在『我的憑證』選項找到剛剛匯入的憑證,另外在系統在點選![Alt text](image/done.png)按鈕會到iOS Certificates頁面,可以畫面看到剛剛新增的App憑證
+</br></br>
+![Alt text](image/step8.png)
+![Alt text](image/step8-1.png)
