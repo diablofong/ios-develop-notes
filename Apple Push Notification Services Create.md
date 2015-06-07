@@ -51,3 +51,32 @@ APNS 全名為 Apple Push Notification Service，也就是大家常說的 Push N
 </br></br>
 ![Alt text](image/step8.png)
 ![Alt text](image/step8-1.png)
+
+9. 將Apple Development IOS Push Services憑證與金要匯出成.p12檔,再匯出的時候需要輸入密碼與系統登入密碼
+</br></br>
+![Alt text](image/step9.png)
+![Alt text](image/step9-1.png)
+![Alt text](image/step9-2.png)
+![Alt text](image/step9-3.png)
+
+10. 現在要將匯出來的.p12檔案利用openssl去轉換成pem檔,最後將push_develop_cert.pem與pushkey.pem合併為ck.pem,這個檔案就是要放置推送主機所需要的檔案,首先開啟終端機輸入以下指令
+	1. cd Desktop/
+	2. openssl pkcs12 -clcerts -nokeys -out push_develop_cert.pem -in ios_push_cert.p12
+	3. openssl pkcs12 -nocerts -out push_develop_key.pem -in ios_push_cert.p12
+	4. openssl rsa -in push_develop_key.pem -out pushkey.pem
+	5. cat push_develop_cert.pem pushkey.pem > ck.pem
+<br><br>
+![Alt text](image/step10.png)
+
+11.現在來測試看看剛剛所產製出來的pem檔案是否可以正常使用SSL憑證連線到測試sandbox push server,假如測試結果成功會出現一堆連線訊息,就可以直接離開終端機
+```
+openssl s_client -connect gateway.sandbox.push.apple.com:2195 -cert push_develop_cert.pem -key pushkey.pem
+```
+<br><br>
+![Alt text](image/step11.png)
+
+##App測試推播功能
+1. 先利用ionic去建立一個專案```testpushapp```
+2. 安裝cordova plugin ```cordova plugin add https://github.com/phonegap-build/PushPlugin.git```
+3. 在app.js檔案開始撰寫註冊推播訊息帳號與接收訊息功能
+
