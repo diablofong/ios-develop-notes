@@ -76,7 +76,33 @@ openssl s_client -connect gateway.sandbox.push.apple.com:2195 -cert push_develop
 ![Alt text](image/step11.png)
 
 ##App測試推播功能
-1. 先利用ionic去建立一個專案```testpushapp```
-2. 安裝cordova plugin ```cordova plugin add https://github.com/phonegap-build/PushPlugin.git```
-3. 在app.js檔案開始撰寫註冊推播訊息帳號與接收訊息功能
+
+測試App所需要開發環境與套件如下：
+	
+1. ionic
+2. cordova
+3. ngCordova
+4. ngCordova plugin PushPlugin
+
+App開發測試步驟
+
+1. 先利用ionic建立專案,專案名稱要與申請憑證app名稱一樣
+	
+	```ionic start testpushapp```
+	
+![Alt text](image/app1.png)
+2. 安裝ngCordova
+
+	```bower install ngCordova```
+	
+![Alt text](image/app2.png)
+
+![Alt text](image/app2-1.png)
+3. 安裝推播訊息套件
+
+```ionic plugin add https://github.com/phonegap-build/PushPlugin.git```
+	
+![Alt text](image/app3.png)
+4. 在app.js新增註冊與接收訊息功能
+5. 利用測試程式進行推播訊息測試
 
