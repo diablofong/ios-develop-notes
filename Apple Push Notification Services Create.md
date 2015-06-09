@@ -103,6 +103,17 @@ App開發測試步驟
 ```ionic plugin add https://github.com/phonegap-build/PushPlugin.git```
 	
 ![Alt text](image/app3.png)
+
+
+```ionic plugin add org.apache.cordova.media```
+
+![Alt text](image/app3-1.png)
+
+```ionic plugin add org.apache.cordova.dialogs ```
+
+![Alt text](image/app3-2.png)
+
 4. 在app.js新增註冊與接收訊息功能
-5. 利用測試程式進行推播訊息測試
+5. 修改config.xml的widget id,注意該id必須與App的Bundle ID一樣
+6. 利用測試程式進行推播訊息測試
 
