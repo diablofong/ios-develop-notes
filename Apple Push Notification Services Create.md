@@ -122,9 +122,9 @@ App開發測試步驟
 [發送訊息測試程式](https://gist.github.com/diablofong/9f5148a0be9e4fcd7667)<br>
 
 ##測試結果
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G4najc0eC24" frameborder="0" allowfullscreen></iframe>
-</center>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=G4najc0eC24
+" target="_blank"><img src="http://img.youtube.com/vi/G4najc0eC24/0.jpg" 
+alt="ionic push notification sample" width="500" height="350" border="10" /></a>
 
 ##範例程式
 請參考Push Notification Example資料夾
