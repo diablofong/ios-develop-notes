@@ -83,6 +83,8 @@ openssl s_client -connect gateway.sandbox.push.apple.com:2195 -cert push_develop
 2. cordova
 3. ngCordova
 4. ngCordova plugin PushPlugin
+5. org.apache.cordova.media
+6. org.apache.cordova.dialogs
 
 App開發測試步驟
 
@@ -112,8 +114,18 @@ App開發測試步驟
 ```ionic plugin add org.apache.cordova.dialogs ```
 
 ![Alt text](image/app3-2.png)
-
-4. 在app.js新增註冊與接收訊息功能
+4. 在controllers.js新增註冊與接收訊息功能
+[程式範例](https://gist.github.com/diablofong/90703eb599d0a44cc955)<br>
 5. 修改config.xml的widget id,注意該id必須與App的Bundle ID一樣
+![Alt text](image/app4.png)
 6. 利用測試程式進行推播訊息測試
+[發送訊息測試程式](https://gist.github.com/diablofong/9f5148a0be9e4fcd7667)<br>
+
+##測試結果
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G4najc0eC24" frameborder="0" allowfullscreen></iframe>
+</center>
+
+##範例程式
+請參考Push Notification Example資料夾
 
